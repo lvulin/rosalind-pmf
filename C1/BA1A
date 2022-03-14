@@ -1,0 +1,21 @@
+def kmer(text, i, k):
+    """podstring od ite pozicije za iducih k slova"""
+    return text[i : (i + k)]
+
+
+def patterncount(text, pattern):
+    """broji koliko puta se uzorak pojavia u tekstu"""
+    count = 0
+    np = len(pattern)
+    for i in range(0, len(text) - np + 1):
+        if kmer(text, i, np) == pattern:
+            count = count + 1
+    return count
+
+x="""GCGCG
+GCG"""
+inlines=x.split("\n")   #splita string u listu (po sep kojeg odaberes)
+text=inlines[0]
+pattern=inlines[1]
+result=patterncount(text,pattern)
+print(str(result)) 
