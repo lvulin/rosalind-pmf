@@ -1,0 +1,20 @@
+def complement(string):
+    compl=""
+    ns=len(string)
+    for i in range(0,ns):
+        if string[i]=="A":
+            compl+="T"
+        if string[i]=="T":
+            compl+="A"
+        if string[i]=="C":
+            compl+="G"
+        if string[i]=="G":
+            compl+="C"
+    return compl
+
+def reversed_string(string):
+    return string[::-1]
+
+pattern="AAAACCCGGT"
+result=reversed_string(complement(pattern))
+print(result)
