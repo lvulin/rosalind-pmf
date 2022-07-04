@@ -1,0 +1,44 @@
+def kmersfrequency(text, k):
+    D = dict()
+    for i in range(0, len(text) - k + 1):
+        tmp = text[i : (i + k)]
+        try:
+            D[tmp].append(i)
+        except KeyError:
+            D[tmp] = [i]
+    return D
+    
+def HammingDistance(p, q):
+    """Computes the hamming distance between strings p and q"""
+    if len(p) != len(q):
+        return -1
+
+    dist = 0
+    for first, second in zip(p, q):
+        if first != second:
+            dist = dist + 1
+
+    return dist 
+    
+    
+    
+    
+def ApproximatePatternMatching(text, pattern, d):
+    """Find All Approximate Occurrences of a Pattern in a String"""
+    D = kmersfrequency(text, len(pattern))
+    #print(D)
+    L = list()
+    [L.extend(value) for key, value in D.items() if HammingDistance(key, pattern) <= d]
+    return sorted(L)
+    
+x=""" """    
+inlines = x.split()
+pattern = inlines[0]
+ext = inlines[1]
+d = inlines[2]
+d = int(d)
+
+res=ApproximatePatternMatching(text,pattern,d)
+for i in range (len(res)):
+  res[i]=str(res[i])
+print(" ".join(res))
