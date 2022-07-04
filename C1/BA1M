@@ -1,0 +1,16 @@
+def NumberToPattern(index, k):
+    pattern = list()
+    D = {0: "A", 1: "C", 2: "G", 3: "T"}
+    q = index
+    for i in range(0, k):
+        r = q % 4   #ostatak pri djeljenju s 4
+        q = q // 4  #najmanje donje
+        pattern.append(D[r])
+    return "".join(pattern[::-1]) #spoji u string sa sep ""
+x="""45
+4"""
+inlines=x.split()
+index=int(inlines[0])
+k=int(inlines[1])
+result=NumberToPattern(index, k)
+print(result)
