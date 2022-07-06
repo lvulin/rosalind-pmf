@@ -1,0 +1,22 @@
+def DPChange(money,coins):
+    minNumCoins=[]
+    minNumCoins.append(0)
+    for m in range (0,money+1):
+        minNumCoins.append(money+10) #Infinity
+        for i in range (0,len(coins)):
+            if m>=coins[i]:
+                if minNumCoins[m-coins[i]]+1<minNumCoins[m]:
+                    minNumCoins[m]=minNumCoins[m-coins[i]]+1
+    return minNumCoins[money]
+    
+    x='''18573
+1,3,5,10,15,16,18,19'''
+inlines=x.split("\n")
+money=int(inlines[0])
+Coins=inlines[1].split(",")
+coins=[]
+for c in Coins:
+  coins.append(int(c))
+res=DPChange(money,coins)
+print (res)
+  
