@@ -1,25 +1,36 @@
+def prefix(pattern):
+    """substring of pattern without last letter"""
+    return pattern[0:len(pattern)-1]
 
-def deBrujinGraph(k, text):
-    D = {}
-    for i in range(0, len(text) - k + 1):
-        first = text[i : (i + k - 1)]
-        second = text[(i + 1) : (i + k)]
-        if first not in D:
-            D[first] = [second]
-        else:
-            D[first].append(second)
-    return D
+def suffix(pattern):
+    """ substring of pattern without first letter"""
+    return pattern[1:]
 
-x="""4
-AAGATTCTCTAC"""
+def overlap_graph(kmers):
+    """ returns dictionary where key is pattern and values are pattern' """
+    dictionary=dict()
+    kmers.sort()
+    for pattern in kmers:
+        dictionary[pattern]=[]
+    for pattern in kmers:
+        for pattern2 in kmers:
+            if suffix(pattern)==prefix(pattern2):
+                dictionary[pattern].append(pattern2)
+    return dictionary
+
+def graph_print(dictionary):
+    for key in dictionary.keys():
+        if len(dictionary[key])>0:
+            for element in dictionary[key]:
+                print(key,'->',element)
+x="""ATGCG
+GCATG
+CATGC
+AGGCA
+GGCAT"""
 inlines=x.split()
-k=int(inlines[0])
-text=inlines[1]
-dictionary_deBrujin= deBrujinGraph(k, text)
-result = ""
-keys = sorted(dictionary_deBrujin.keys())
-for first in keys:
-    second = ",".join(sorted(dictionary_deBrujin[first]))
-    result = result + f"{first} -> {second}\n"
-
-print(result)
+kmers=list()
+for i in range(0,len(inlines)):
+    kmers.append(inlines[i])
+result=overlap_graph(kmers)
+graph_print(result)
