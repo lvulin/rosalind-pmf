@@ -1,3 +1,13 @@
+
+
+def ColoredEdges(P):
+     Edges=[]
+     for Chromosome in P:
+          Nodes=ChromosomeToCycle(Chromosome)
+          for j in range(len(Chromosome)):
+               Edges.append((Nodes[2*j+1], Nodes[(2*j+2)%len(Nodes)]))
+     return Edges
+
 def ChromosomeToCycle(Chromosome):
     Nodes=[]
     for j in range(0,len(Chromosome)):
@@ -10,14 +20,7 @@ def ChromosomeToCycle(Chromosome):
             Nodes.append(-2*i-1)
     return Nodes
 
-def ColoredEdges(P):
-     Edges=[]
-     for Chromosome in P:
-          Nodes=ChromosomeToCycle(Chromosome)
-          for j in range(len(Chromosome)):
-               Edges.append((Nodes[2*j+1], Nodes[(2*j+2)%len(Nodes)]))
-     return Edges
-     
+
      
     x = '''(+1 -2 -3)(+4 +5 -6)'''
     x = x[1:-1]
