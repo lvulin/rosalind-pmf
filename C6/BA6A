@@ -1,20 +1,20 @@
 def GreedySorting(str_permutation):
-    helper=[int(x) for x in str_permutation[1:-1].split()] """napravi listu"""
+    helper=[int(x) for x in str_permutation[1:-1].split()]  #napravi listu
     S=[]
     for i in range(0,len(helper)):
-        if helper[i]==i+1: """ ako je i vec i+1 onda nastavi jer je taj dobar"""
+        if helper[i]==i+1: #ako je i vec i+1 onda nastavi jer je taj dobar
             continue
         idx=i
         while True:
-            if helper[idx]==i+1 or helper[idx]==-(i+1): """trazis di je broj koji treba doci na poz i"""
+            if helper[idx]==i+1 or helper[idx]==-(i+1): #trazis di je broj koji treba doci na poz i
                 break
             idx=idx+1
-        mid=[-1*x for x in helper[i:(idx+1)]][::-1]  """uzmi segment, promini predznak i obrni redoslid u segmentu"""
-        helper=helper[:i]+mid+helper[(idx+1):] """sastavis novu listu"""
+        mid=[-1*x for x in helper[i:(idx+1)]][::-1]  #uzmi segment, promini predznak i obrni redoslid u segmentu
+        helper=helper[:i]+mid+helper[(idx+1):] #sastavis novu listu
         S.append(helper.copy())
         if helper[i]<0:
             helper[i]=abs(helper[i])
-            S.append(helper.copy())  """spremi stanje, svaki step"""
+            S.append(helper.copy())  #spremi stanje, svaki step
     if S==[]:
         S=[helper]
     return S
