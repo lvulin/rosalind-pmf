@@ -25,6 +25,8 @@ The goal of this repository is to demonstrate problem-solving skills, algorithmi
 Some selected problems from this repository:
 
 #### BA6A – Greedy sorting of signed permutations
+Implemented the Greedy Sorting algorithm in Python to transform a signed permutation into the identity permutation through reversal and sign-flip operations, while storing intermediate steps.
 #### BA3D / BA3E – De Bruijn graph construction
+
 #### BA2E – Motif search in DNA sequences
 #### BA5E – Sequence alignment using dynamic programming
