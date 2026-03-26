@@ -26,7 +26,11 @@ Some selected problems from this repository:
 
 #### BA6A – Greedy sorting of signed permutations
 Implemented the Greedy Sorting algorithm in Python to transform a signed permutation into the identity permutation through reversal and sign-flip operations, while storing intermediate steps.
+
 #### BA3D / BA3E – De Bruijn graph construction
+These tasks implement de Bruijn graph construction in Python, a core concept in genome assembly.
+For BA3D, the graph is built from a single input string by generating all k-mers and connecting each k-1 prefix to its k-1 suffix. For BA3E, the graph is built directly from a given collection of k-mers using the same prefix–suffix relationship.
+These solutions demonstrate string slicing, dictionary-based graph representation, adjacency list construction, and algorithmic modeling of sequence assembly problems.
 
 #### BA2E – Motif search in DNA sequences
 #### BA5E – Sequence alignment using dynamic programming
