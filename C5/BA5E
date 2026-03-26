@@ -133,8 +133,7 @@ def getInedexOfLetter():
     return index
     
     
-     x = '''PLEASANTLY
-MEANLY'''
+     
     inlines = x.split('\n')
     first = inlines[0]
     second = inlines[1]
