@@ -33,4 +33,9 @@ For BA3D, the graph is built from a single input string by generating all k-mers
 These solutions demonstrate string slicing, dictionary-based graph representation, adjacency list construction, and algorithmic modeling of sequence assembly problems.
 
 #### BA2E – Motif search in DNA sequences
+Implemented a Python solution for finding DNA motifs using greedy search, profile matrices with pseudocounts, and score-based comparison of candidate motif sets.
+
 #### BA5E – Sequence alignment using dynamic programming
+This task implements sequence alignment between two strings using dynamic programming.
+The algorithm constructs a scoring matrix to compute the optimal alignment between two sequences, considering matches, mismatches, and gap penalties. It then reconstructs the alignment by backtracking through the matrix.
+This solution demonstrates dynamic programming, matrix-based computation, and optimal path reconstruction, which are fundamental techniques in bioinformatics and algorithm design.
